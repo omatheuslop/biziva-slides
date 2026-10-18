@@ -1,4 +1,5 @@
 <template>
+  <BizivaAssistant v-if="slides.length && !screening" />
   <template v-if="slides.length">
     <Screen v-if="screening" />
     <Editor v-else-if="_isPC" />
@@ -21,6 +22,7 @@ import Editor from './views/Editor/index.vue'
 import Screen from './views/Screen/index.vue'
 import Mobile from './views/Mobile/index.vue'
 import FullscreenSpin from '@/components/FullscreenSpin.vue'
+import BizivaAssistant from './biziva/BizivaAssistant.vue'
 
 const _isPC = isPC()
 
